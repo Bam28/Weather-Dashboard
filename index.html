@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Righteous&family=Roboto:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Weather Dashboard</title>
 </head>
@@ -15,49 +18,19 @@
             <input type="text" id="search-result">
             <button id="search">Search</button>
             <ul id="city-history-list">
-                <li class="city-history">Chicago</li>
             </ul>
         </aside>
         <section>
             <ul id="city-weather-details">
                 <h2 id="city"></h2>
-                <li>Temp: <p id="temp" class="info-data"></p></li>
-                <li>Wind: <p  id="wind" class="info-data"></p></li>
-                <li>Humidity <p id="humidity" class="info-data"></p></li>
-                <li>UV Index: <p id="uv-index" class="info-data"></p></li>
+                <li class="current-weather-info">Temp: <p id="temp" class="info-data"></p></li>
+                <li class="current-weather-info">Wind: <p  id="wind" class="info-data"></p></li>
+                <li class="current-weather-info">Humidity: <p id="humidity" class="info-data"></p></li>
+                <li class="current-weather-info">UV Index: <p id="uv-index" class="info-data"></p></li>
             </ul>
             <h3>5-Day Forcast:</h3>
             <ol id="five-day-forcast">
-                <ul class="day-forcast">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <ul class="day-forcast">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <ul class="day-forcast">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <ul class="day-forcast">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <ul class="day-forcast">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+
             </ol>
         </section>
     </main>
