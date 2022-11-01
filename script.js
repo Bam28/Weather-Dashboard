@@ -11,7 +11,7 @@ citySearchButton.addEventListener('click', function () {
     cityElement.innerHTML = citySearch.value;
     saveCity(citySearch.value)
 
-   let requestCoordinate = 'http://api.openweathermap.org/geo/1.0/direct?q=' + citySearch.value + '&appid=' + apiKey;
+   let requestCoordinate = 'https://api.openweathermap.org/geo/1.0/direct?q=' + citySearch.value + '&appid=' + apiKey;
 
     fetch(requestCoordinate)
     .then(function (response) {
@@ -31,12 +31,13 @@ citySearchButton.addEventListener('click', function () {
 
 let responseCitySearch = (longitudData, latitudeData) => {
     let requestCurrentWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitudeData + '&lon=' + longitudData + '&appid=' + apiKey + '&units=imperial'
-
+    console.log(requestCurrentWeather)
     fetch(requestCurrentWeather)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
+        console.log(data)
         let tempData = data.main.temp;
         let windData = data.wind.speed
         let humidityData = data.main.humidity
@@ -56,7 +57,6 @@ let responseCitySearch = (longitudData, latitudeData) => {
 
 let everythingCitySearch = (longitudData, latitudeData) => {
     let requesFiveDays = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + longitudData + '&lon=' + longitudData +'&exclude=current,minutely,hourly,alerts&units=imperial&appid=' + apiKey
-    console.log(requesFiveDays)
 
     fetch(requesFiveDays)
     .then(function(response) {
@@ -64,7 +64,7 @@ let everythingCitySearch = (longitudData, latitudeData) => {
     })
     .then(function (data) {
         for(let i = 1; i <= 5; i++){
-        console.log(data.daily[i].dt)
+        // console.log(data.daily[i].dt)
         let timestampSeconds = data.daily[i].dt
         let futureDate = new Date(timestampSeconds*1000);
         let dayForcast = document.createElement('ul')
@@ -88,8 +88,8 @@ let everythingCitySearch = (longitudData, latitudeData) => {
         cityFiveDayWeather.appendChild(dayForcast)
 
 
-        console.log("Date Timestamp:",futureDate.getTime())
-        console.log(futureDate)
+        // console.log("Date Timestamp:",futureDate.getTime())
+        // console.log(futureDate)
     }
     })
     .catch(function () {
